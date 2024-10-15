@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "nullpointer-mall-web": {
+    "sweet-spring-web": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/nullpointer-mall-web",
+            "outputPath": "dist/sweet-spring-web",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -62,10 +62,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "nullpointer-mall-web:build:production"
+              "buildTarget": "sweet-spring-web:build:production"
             },
             "development": {
-              "buildTarget": "nullpointer-mall-web:build:development"
+              "buildTarget": "sweet-spring-web:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,7 +73,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "nullpointer-mall-web:build"
+            "buildTarget": "sweet-spring-web:build"
           }
         },
         "test": {

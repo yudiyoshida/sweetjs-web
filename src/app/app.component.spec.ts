@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'nullpointer-mall-web' title`, () => {
+  it(`should have the 'sweet-spring-web' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('nullpointer-mall-web');
+    expect(app.title).toEqual('sweet-spring-web');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, nullpointer-mall-web');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, sweet-spring-web');
   });
 });
