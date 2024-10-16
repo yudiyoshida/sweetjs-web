@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { CartItem } from '../../../../shared/models/cart.model';
 import { CartItemComponent } from '../cart-item/cart-item.component';
 
 @Component({
@@ -11,5 +12,5 @@ import { CartItemComponent } from '../cart-item/cart-item.component';
   ],
 })
 export class CartListItemComponent {
-
+  @Input({ required: true }) cartItems!: CartItem[];
 }

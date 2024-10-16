@@ -1,7 +1,12 @@
 <section class="bg-white p-4 rounded-lg w-full grid gap-4">
-  <h2 class="font-bold text-xl text-primary-orange">Your Cart ({{count}})</h2>
-  <app-cart-list-item />
-  <app-cart-subtotal />
-  <app-cart-carbon-card />
-  <app-button label="Confirm Order" />
+  @if (cart$ | async; as cart) {
+    <app-cart-title [cart]="cart" />
+    <app-cart-list-item [cartItems]="cart.items" />
+    <app-cart-subtotal [cartItems]="cart.items" />
+    <app-cart-carbon-card />
+    <app-button label="Confirm Order" />
+  }
+  @else {
+    <p>Loading...</p>
+  }
 </section>
