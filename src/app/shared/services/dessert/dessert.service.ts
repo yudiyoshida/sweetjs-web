@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Dessert } from '../../models/dessert.model';
@@ -7,8 +6,6 @@ import { Dessert } from '../../models/dessert.model';
   providedIn: 'root',
 })
 export class DessertService {
-  constructor(private http: HttpClient) { }
-
   private DATA: Dessert[] = [
     {
       id: 'id-1',

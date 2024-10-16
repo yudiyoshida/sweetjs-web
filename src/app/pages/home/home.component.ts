@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { AsyncPipe, NgClass } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { map, shareReplay } from 'rxjs';
 import { CartComponent } from '../../components/cart/cart.component';
@@ -14,9 +14,8 @@ import { ToolbarComponent } from '../../components/toolbar/toolbar.component';
   imports: [
     DessertListComponent,
     CartComponent,
-    AsyncPipe,
-    NgClass,
     ToolbarComponent,
+    AsyncPipe,
   ],
 })
 export class HomeComponent {

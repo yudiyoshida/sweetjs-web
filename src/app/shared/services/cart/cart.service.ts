@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Cart } from '../../models/cart.model';
@@ -7,8 +6,6 @@ import { Cart } from '../../models/cart.model';
   providedIn: 'root',
 })
 export class CartService {
-  constructor(private http: HttpClient) { }
-
   private DATA: Cart = {
     id: 'cart-1',
     items: [
