@@ -1,0 +1,7 @@
+@if (cart$ | async; as cart) {
+  <section>
+    <app-order-title />
+    <app-order-list-items [cartItems]="cart.items" />
+    <app-button label="Start new order" />
+  </section>
+}

@@ -1,0 +1,6 @@
+<div class="bg-cream p-4 rounded-lg grid gap-3 mb-7">
+  @for (item of cartItems; track item.id) {
+    <app-order-item [item]="item" />
+  }
+  <app-cart-subtotal [cartItems]="cartItems" />
+</div>
