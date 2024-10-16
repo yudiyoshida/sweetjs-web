@@ -1,0 +1,14 @@
+<!-- eslint-disable @angular-eslint/template/no-negated-async -->
+@if (isHandset$ | async) {
+  <app-toolbar />
+}
+<main class="p-4 bg-cream">
+  <div class="flex justify-center items-start gap-7 relative">
+    <app-dessert-list />
+    @if (!(isHandset$ | async)) {
+      <div class="sticky top-4">
+        <app-cart />
+      </div>
+    }
+  </div>
+</main>

@@ -1,4 +1,4 @@
-<main class="p-4">
+<section>
   <h1 class="font-bold text-3xl mb-4 text-center">Desserts</h1>
   <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
     @for (dessert of desserts$ | async; track dessert.id) {
@@ -8,4 +8,4 @@
       <p class="text-center">No desserts found</p>
     }
   </div>
-</main>
+</section>
