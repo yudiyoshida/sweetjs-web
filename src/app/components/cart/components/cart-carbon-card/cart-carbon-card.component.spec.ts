@@ -6,12 +6,12 @@ describe('CartCarbonCardComponent', () => {
   let component: CartCarbonCardComponent;
   let fixture: ComponentFixture<CartCarbonCardComponent>;
 
-  beforeEach(async () => {
+  beforeEach(async() => {
     await TestBed.configureTestingModule({
-      imports: [CartCarbonCardComponent]
+      imports: [CartCarbonCardComponent],
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(CartCarbonCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
