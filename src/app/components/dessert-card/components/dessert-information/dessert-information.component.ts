@@ -1,5 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Dessert } from '../../../../shared/models/dessert.model';
 
 @Component({
   selector: 'app-dessert-information',
@@ -11,5 +12,5 @@ import { Component } from '@angular/core';
   ],
 })
 export class DessertInformationComponent {
-
+  @Input({ required: true }) dessert!: Dessert;
 }

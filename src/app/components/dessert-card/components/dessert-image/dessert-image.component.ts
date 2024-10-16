@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-dessert-image',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './dessert-image.component.scss',
 })
 export class DessertImageComponent {
-
+  @Input({ required: true }) image!: string;
 }
