@@ -5,7 +5,7 @@
     @if (cart.items.length) {
       <app-cart-subtotal [cartItems]="cart.items" />
       <app-cart-carbon-card />
-      <app-button label="Confirm Order" />
+      <app-button label="Confirm Order" (clickEvent)="openCart()" />
     }
   }
   @else {
