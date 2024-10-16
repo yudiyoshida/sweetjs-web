@@ -6,7 +6,7 @@
   <div class="flex justify-center items-start gap-7 relative">
     <app-dessert-list />
     @if (!(isHandset$ | async)) {
-      <div class="sticky top-4">
+      <div class="sticky top-4 flex-grow">
         <app-cart />
       </div>
     }

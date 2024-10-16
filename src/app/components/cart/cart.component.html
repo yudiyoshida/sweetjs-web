@@ -2,9 +2,11 @@
   @if (cart$ | async; as cart) {
     <app-cart-title [cart]="cart" />
     <app-cart-list-item [cartItems]="cart.items" />
-    <app-cart-subtotal [cartItems]="cart.items" />
-    <app-cart-carbon-card />
-    <app-button label="Confirm Order" />
+    @if (cart.items.length) {
+      <app-cart-subtotal [cartItems]="cart.items" />
+      <app-cart-carbon-card />
+      <app-button label="Confirm Order" />
+    }
   }
   @else {
     <p>Loading...</p>

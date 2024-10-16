@@ -1,3 +1,7 @@
 @for (item of cartItems; track item.id) {
   <app-cart-item [cartItem]="item" />
 }
+@empty {
+  <img src="assets/images/svg/illustration-empty-cart.svg" alt="Empty cart" class="mx-auto" />
+  <p class="text-primary-orange text-center font-medium">Your added items will appear here</p>
+}
