@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { CartCarbonCardComponent } from './components/cart-carbon-card/cart-carbon-card.component';
-import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { CartListItemComponent } from './components/cart-list-item/cart-list-item.component';
 import { CartSubtotalComponent } from './components/cart-subtotal/cart-subtotal.component';
 
 @Component({
@@ -10,10 +10,10 @@ import { CartSubtotalComponent } from './components/cart-subtotal/cart-subtotal.
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.scss',
   imports: [
-    CartItemComponent,
+    ButtonComponent,
     CartSubtotalComponent,
     CartCarbonCardComponent,
-    ButtonComponent,
+    CartListItemComponent,
   ],
 })
 export class CartComponent {
