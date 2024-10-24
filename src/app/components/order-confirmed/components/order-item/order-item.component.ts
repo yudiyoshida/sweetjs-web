@@ -1,6 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { CartItem } from '../../../../shared/models/cart.model';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-order-item',
@@ -12,9 +11,7 @@ import { CartItem } from '../../../../shared/models/cart.model';
   ],
 })
 export class OrderItemComponent {
-  @Input({ required: true }) item!: CartItem;
-
   get subtotal(): number {
-    return this.item.dessert.price * this.item.quantity;
+    return 10;
   }
 }

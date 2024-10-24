@@ -1,6 +1,5 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { CartItem } from '../../../../shared/models/cart.model';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cart-subtotal',
@@ -12,9 +11,7 @@ import { CartItem } from '../../../../shared/models/cart.model';
   ],
 })
 export class CartSubtotalComponent {
-  @Input({ required: true }) cartItems!: CartItem[];
-
   get subtotal(): number {
-    return this.cartItems.reduce((acc, item) => acc + item.dessert.price * item.quantity, 0);
+    return 40;
   }
 }

@@ -13,6 +13,7 @@ export class DessertService {
       name: 'Waffle with Berries',
       category: 'Waffle',
       price: 6.50,
+      quantityInCart: 0,
     },
     {
       id: 'id-2',
@@ -20,6 +21,7 @@ export class DessertService {
       name: 'Vanilla Bean Crème Brûlée',
       category: 'Crème Brûlée',
       price: 7.00,
+      quantityInCart: 0,
     },
     {
       id: 'id-3',
@@ -27,6 +29,7 @@ export class DessertService {
       name: 'Macaron Mix of Five',
       category: 'Macaron',
       price: 8.00,
+      quantityInCart: 0,
     },
     {
       id: 'id-4',
@@ -34,6 +37,7 @@ export class DessertService {
       name: 'Classic Tiramisu',
       category: 'Tiramisu',
       price: 5.50,
+      quantityInCart: 0,
     },
     {
       id: 'id-5',
@@ -41,6 +45,7 @@ export class DessertService {
       name: 'Pistachio Baklava',
       category: 'Baklava',
       price: 4.00,
+      quantityInCart: 0,
     },
     {
       id: 'id-6',
@@ -48,6 +53,7 @@ export class DessertService {
       name: 'Lemon Meringue Pie',
       category: 'Pie',
       price: 5.00,
+      quantityInCart: 0,
     },
     {
       id: 'id-7',
@@ -55,6 +61,7 @@ export class DessertService {
       name: 'Red Velvet Cake',
       category: 'Cake',
       price: 4.50,
+      quantityInCart: 0,
     },
     {
       id: 'id-8',
@@ -62,6 +69,7 @@ export class DessertService {
       name: 'Salted Caramel Brownie',
       category: 'Brownie',
       price: 4.50,
+      quantityInCart: 0,
     },
     {
       id: 'id-9',
@@ -69,6 +77,7 @@ export class DessertService {
       name: 'Vanilla Panna Cotta',
       category: 'Panna Cotta',
       price: 6.50,
+      quantityInCart: 0,
     },
   ];
 

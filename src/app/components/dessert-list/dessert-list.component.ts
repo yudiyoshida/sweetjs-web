@@ -1,8 +1,6 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, Input } from '@angular/core';
 import { Dessert } from '../../shared/models/dessert.model';
-import { DessertService } from '../../shared/services/dessert/dessert.service';
 import { DessertCardComponent } from '../dessert-card/dessert-card.component';
 
 @Component({
@@ -15,14 +13,6 @@ import { DessertCardComponent } from '../dessert-card/dessert-card.component';
     AsyncPipe,
   ],
 })
-export class DessertListComponent implements OnInit {
-  public desserts$!: Observable<Dessert[]>;
-
-  constructor(
-    private dessertService: DessertService,
-  ) {}
-
-  public ngOnInit() {
-    this.desserts$ = this.dessertService.getAll();
-  }
+export class DessertListComponent {
+  @Input({ required: true }) desserts!: Dessert[] | null;
 }

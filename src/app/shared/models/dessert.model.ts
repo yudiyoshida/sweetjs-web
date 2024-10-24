@@ -4,4 +4,5 @@ export type Dessert = {
   name: string;
   category: string;
   price: number;
+  quantityInCart: number;
 }

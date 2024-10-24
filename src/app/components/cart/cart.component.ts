@@ -1,8 +1,8 @@
 import { AsyncPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { MatDialog } from '@angular/material/dialog';
-import { CartService } from '../../shared/services/cart/cart.service';
+import { Dessert } from '../../shared/models/dessert.model';
 import { ButtonComponent } from '../button/button.component';
 import { OrderConfirmedModalComponent } from '../order-confirmed-modal/order-confirmed-modal.component';
 import { OrderConfirmedComponent } from '../order-confirmed/order-confirmed.component';
@@ -26,13 +26,12 @@ import { CartTitleComponent } from './components/cart-title/cart-title.component
   ],
 })
 export class CartComponent {
+  @Input({ required: true }) desserts!: Dessert[] | null;
+
   constructor(
-    private cartService: CartService,
     private dialog: MatDialog,
     private bottomSheet: MatBottomSheet,
   ) {}
-
-  public cart$ = this.cartService.getAll();
 
   public openCart() {
     if (window.innerWidth < 960) {
