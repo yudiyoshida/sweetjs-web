@@ -1,5 +1,5 @@
 <section>
   <app-order-title />
-  <app-order-list-items />
-  <app-button label="Start new order" />
+  <app-order-list-items [cart]="cart" />
+  <app-button label="Start new order" (clickEvent)="emptyCart()" />
 </section>

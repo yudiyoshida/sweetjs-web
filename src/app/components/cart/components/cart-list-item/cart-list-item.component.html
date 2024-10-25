@@ -1,5 +1,5 @@
-@for (item of []; track item) {
-  <app-cart-item />
+@for (item of cart; track item.id) {
+  <app-cart-item [dessert]="item" />
 }
 @empty {
   <img src="assets/images/svg/illustration-empty-cart.svg" alt="Empty cart" class="mx-auto" />

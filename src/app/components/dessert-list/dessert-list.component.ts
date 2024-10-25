@@ -1,6 +1,6 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, Input } from '@angular/core';
-import { Dessert } from '../../shared/models/dessert.model';
+import { Component } from '@angular/core';
+import { DessertService } from '../../shared/services/dessert/dessert.service';
 import { DessertCardComponent } from '../dessert-card/dessert-card.component';
 
 @Component({
@@ -14,5 +14,7 @@ import { DessertCardComponent } from '../dessert-card/dessert-card.component';
   ],
 })
 export class DessertListComponent {
-  @Input({ required: true }) desserts!: Dessert[] | null;
+  constructor(private dessertService: DessertService) {}
+
+  public desserts$ = this.dessertService.getDesserts();
 }

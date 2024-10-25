@@ -4,11 +4,11 @@
 }
 <main class="p-4 bg-cream">
   <div class="flex justify-center items-start gap-7 relative">
-    <app-dessert-list [desserts]="desserts$ | async" />
+    <app-dessert-list />
 
     @if (!(isHandset$ | async)) {
       <div class="sticky top-4 flex-grow">
-        <app-cart [desserts]="desserts$ | async" />
+        <app-cart />
       </div>
     }
   </div>

@@ -1,7 +1,7 @@
 <section>
   <h1 class="font-bold text-3xl mb-4 text-center lg:text-left">Desserts</h1>
   <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-    @for (dessert of desserts; track dessert.id) {
+    @for (dessert of desserts$ | async; track dessert.id) {
       <app-dessert-card [dessert]="dessert" />
     }
     @empty {

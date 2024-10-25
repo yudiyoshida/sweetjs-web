@@ -1,9 +1,9 @@
 <div class="grid grid-cols-[auto_auto_1fr_auto] grid-rows-2 gap-3 border-b py-3">
-  <p class="col-span-3 font-medium">{{ 'cartItem.dessert.name' }}</p>
-  <button matTooltip="Remove item" matTooltipPosition="before" class="row-span-2">
+  <p class="col-span-3 font-medium">{{ dessert.name }}</p>
+  <button matTooltip="Remove item" matTooltipPosition="before" class="row-span-2" (click)="deleteDessert()">
     <mat-icon>cancel</mat-icon>
   </button>
-  <p class="text-primary-orange font-medium">{{ 'cartItem.quantity' }}x</p>
-  <p>{{ 'cartItem.dessert.price' }}</p>
-  <p class="font-medium">{{ 'subtotal' }}</p>
+  <p class="text-primary-orange font-medium">{{ dessert.quantityInCart }}x</p>
+  <p>{{ dessert.price | currency }}</p>
+  <p class="font-medium">{{ subtotal | currency }}</p>
 </div>

@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { Dessert } from '../../../../shared/models/dessert.model';
+import { DessertService } from '../../../../shared/services/dessert/dessert.service';
 
 @Component({
   selector: 'app-dessert-button',
@@ -11,22 +13,15 @@ import { MatIconModule } from '@angular/material/icon';
   ],
 })
 export class DessertButtonComponent {
-  addedToCart = false;
-  count = 1;
+  @Input({ required: true }) dessert!: Dessert;
 
-  addToCart() {
-    this.addedToCart = true;
-  }
+  constructor(private dessertService: DessertService) {}
 
   decrement() {
-    if (this.count === 1) {
-      this.addedToCart = false;
-    } else {
-      this.count--;
-    }
+    this.dessertService.decrementDessertQuantity(this.dessert);
   }
 
   increment() {
-    this.count++;
+    this.dessertService.incrementDessertQuantity(this.dessert);
   }
 }

@@ -1,9 +1,9 @@
 <section class="bg-white p-4 rounded-lg w-full grid gap-4">
-  @if (desserts) {
-    <app-cart-title />
-    <app-cart-list-item />
-    @if ([].length) {
-      <app-cart-subtotal />
+  @if (cart) {
+    <app-cart-title [cart]="cart" />
+    <app-cart-list-item [cart]="cart" />
+    @if (cart.length) {
+      <app-cart-subtotal [cart]="cart" />
       <app-cart-carbon-card />
       <app-button label="Confirm Order" (clickEvent)="openCart()" />
     }

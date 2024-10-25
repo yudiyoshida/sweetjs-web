@@ -1,16 +1,16 @@
 <div class="w-2/3 mx-auto -translate-y-1/2">
-  @if (addedToCart) {
+  @if (dessert.quantityInCart) {
     <div class="border rounded-full px-3 py-2.5 w-full text-white bg-primary-orange">
       <div class="flex justify-between items-center gap-2">
         <mat-icon class="cursor-pointer" (click)="decrement()">do_not_disturb_on</mat-icon>
-        <p>{{ count }}</p>
+        <p>{{ dessert.quantityInCart }}</p>
         <mat-icon class="cursor-pointer" (click)="increment()">add_circle</mat-icon>
       </div>
     </div>
   }
   @else {
     <button
-      (click)="addToCart()"
+      (click)="increment()"
       class="
         border border-zinc-400 rounded-full px-5 py-2.5 w-full bg-white
         hover:border-primary-orange hover:text-primary-orange"

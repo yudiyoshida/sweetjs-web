@@ -1,7 +1,9 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { Dessert } from '../../../../shared/models/dessert.model';
+import { DessertService } from '../../../../shared/services/dessert/dessert.service';
 
 @Component({
   selector: 'app-cart-item',
@@ -14,4 +16,16 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     CurrencyPipe,
   ],
 })
-export class CartItemComponent {}
+export class CartItemComponent {
+  @Input({ required: true }) dessert!: Dessert;
+
+  constructor(private dessertService: DessertService) {}
+
+  get subtotal() {
+    return this.dessert.quantityInCart * this.dessert.price;
+  }
+
+  deleteDessert(): void {
+    this.dessertService.deleteDessert(this.dessert);
+  }
+}

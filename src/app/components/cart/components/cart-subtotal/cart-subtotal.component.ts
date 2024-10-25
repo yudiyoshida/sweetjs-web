@@ -1,5 +1,6 @@
 import { CurrencyPipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Dessert } from '../../../../shared/models/dessert.model';
 
 @Component({
   selector: 'app-cart-subtotal',
@@ -10,8 +11,22 @@ import { Component } from '@angular/core';
     CurrencyPipe,
   ],
 })
-export class CartSubtotalComponent {
-  get subtotal(): number {
-    return 40;
+export class CartSubtotalComponent implements OnChanges {
+  @Input({ required: true }) cart!: Dessert[] | null;
+
+  public subtotal!: number;
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['cart']) {
+      this.calculateSubtotal();
+    }
+  }
+
+  private calculateSubtotal(): void {
+    if (this.cart) {
+      this.subtotal = this.cart.reduce((acc, { price, quantityInCart }) => {
+        return acc + (price * quantityInCart);
+      }, 0);
+    }
   }
 }

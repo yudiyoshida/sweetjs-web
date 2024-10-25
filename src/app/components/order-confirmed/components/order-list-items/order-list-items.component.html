@@ -1,6 +1,6 @@
 <div class="bg-cream p-4 rounded-lg grid gap-3 mb-7">
-  @for (item of []; track $index) {
-    <app-order-item />
+  @for (item of cart; track item.id) {
+    <app-order-item [dessert]="item" />
   }
-  <app-cart-subtotal />
+  <app-cart-subtotal [cart]="cart" />
 </div>

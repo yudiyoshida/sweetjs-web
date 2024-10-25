@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Dessert } from '../../models/dessert.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DessertService {
-  private DATA: Dessert[] = [
+  private _desserts = new BehaviorSubject<Dessert[]>([
     {
       id: 'id-1',
       image: '/assets/images/jpg/image-waffle-desktop.jpg',
@@ -79,9 +79,36 @@ export class DessertService {
       price: 6.50,
       quantityInCart: 0,
     },
-  ];
+  ]);
 
-  public getAll(): Observable<Dessert[]> {
-    return of(this.DATA);
+  public getDesserts(): Observable<Dessert[]> {
+    return this._desserts.asObservable();
+  }
+
+  public incrementDessertQuantity(dessert: Dessert): void {
+    const desserts = this._desserts.getValue();
+    const dessertIndex = desserts.findIndex((d) => d.id === dessert.id);
+    desserts[dessertIndex].quantityInCart++;
+    this._desserts.next(desserts);
+  }
+
+  public decrementDessertQuantity(dessert: Dessert): void {
+    const desserts = this._desserts.getValue();
+    const dessertIndex = desserts.findIndex((d) => d.id === dessert.id);
+    desserts[dessertIndex].quantityInCart--;
+    this._desserts.next(desserts);
+  }
+
+  public deleteDessert(dessert: Dessert): void {
+    const desserts = this._desserts.getValue();
+    const dessertIndex = desserts.findIndex((d) => d.id === dessert.id);
+    desserts[dessertIndex].quantityInCart = 0;
+    this._desserts.next(desserts);
+  }
+
+  public emptyCart(): void {
+    const desserts = this._desserts.getValue();
+    desserts.forEach((d) => d.quantityInCart = 0);
+    this._desserts.next(desserts);
   }
 }
