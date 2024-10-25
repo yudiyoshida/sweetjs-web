@@ -43,9 +43,13 @@ export class CartComponent implements OnInit {
 
   public openCart() {
     if (window.innerWidth < 960) {
-      this.bottomSheet.open(OrderConfirmedBottomsheetComponent);
+      this.bottomSheet.open(OrderConfirmedBottomsheetComponent, {
+        disableClose: true,
+      });
     } else {
-      this.dialog.open(OrderConfirmedModalComponent);
+      this.dialog.open(OrderConfirmedModalComponent, {
+        disableClose: true,
+      });
     }
   }
 }
